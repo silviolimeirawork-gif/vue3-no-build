@@ -1,0 +1,28 @@
+Este exemplo cria um aplicativo de lista de tarefas (To-Do List) completo, 
+utilizando Vue 3 com Composition API via CDN, Bootstrap 5 para estilos, 
+LocalStorage para persistência de dados e Fetch API para buscar dados 
+iniciais (simulados).
+
+Não há ferramentas de build (Vite/Webpack) envolvidas. Basta salvar 
+o código abaixo em um arquivo .html e abrir no navegador.
+
+Explicação dos Pontos Chave
+
+No Build Tools: Utilizamos https://unpkg.com/vue@3/dist/vue.global.js.
+Composition API: Importamos ref, onMounted, watch da variável global Vue.
+
+Bootstrap 5: Classes como container, card, list-group, e btn foram usadas para estilização.
+
+Fetch API: Dentro do onMounted, usamos fetch para buscar dados iniciais de um endpoint JSON.
+Local Storage:
+
+Carregar: localStorage.getItem dentro do onMounted.
+Salvar: localStorage.setItem é chamado ao adicionar, remover ou marcar como concluído.
+Reatividade: O watch(todos, ..., { deep: true }) monitora alterações no array e salva 
+automaticamente.
+v-model & v-for: Usados para bind de formulário e renderização da lista.
+@submit.prevent: Impede o recarregamento da página ao adicionar um item.
+
+git remote add origin https://github.com/silviolimeirawork-gif/vue3-no-build.git
+git branch -M main
+git push -u origin main
